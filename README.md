@@ -5,7 +5,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/proxene/Ubuntu-Monitoring.svg?style=for-the-badge)](https://github.com/proxene/CodesWholesale-PHP/issues)
 [![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](#)
 
-<br/><br/>
+<br/>
 
 A simple and lightweight PHP SDK for interacting with the **CodesWholesale API V3**.  
 Designed in an **object-oriented style** inspired by the V2 SDK, with support for:
