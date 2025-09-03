@@ -2,7 +2,7 @@
 
 <br/>
 
-[![GitHub Issues](https://img.shields.io/github/issues/proxene/Ubuntu-Monitoring.svg?style=for-the-badge)](https://github.com/proxene/CodesWholesale-PHP/issues)
+[![GitHub Issues](https://img.shields.io/github/issues/proxene/CodesWholesale-PHP.svg?style=for-the-badge)](https://github.com/proxene/CodesWholesale-PHP/issues)
 [![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](#)
 
 <br/>
