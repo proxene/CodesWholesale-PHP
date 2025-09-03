@@ -28,6 +28,8 @@ Designed in an **object-oriented style** inspired by the V2 SDK, with support fo
   - Fully object-oriented with typed properties and methods.
   - Exception handling for HTTP and authentication errors.
 
+</br>
+
 ## Requirements
 
 - PHP 7.4+
