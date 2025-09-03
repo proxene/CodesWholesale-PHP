@@ -41,3 +41,36 @@ Designed in an **object-oriented style** inspired by the V2 SDK, with support fo
 
 - PHP 7.4+
 - cURL extension enabled
+
+<br/>
+
+## Usage
+
+### 1. Initialize the Client
+
+```php
+use CodesWholesale\Client;
+use CodesWholesale\Storage\TokenSessionStorage;
+
+// Initialize the client
+$client = new Client([
+    'cw.client_id'     => 'your-client-id',
+    'cw.client_secret' => 'your-client-secret',
+    'cw.endpoint_uri'  => CodesWholesale::SANDBOX_ENDPOINT, // or LIVE_ENDPOINT,
+    'cw.token_storage' => new TokenSessionStorage(),
+]);
+```
+
+<br/>
+
+### 2. Retrieve Products
+
+```php
+use CodesWholesale\Resource\Product;
+
+// Get all products
+$products = Product::getAll($client);
+
+// Get a product by ID
+$product = Product::getById($client, 'PRODUCT_ID');
+```
