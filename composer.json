@@ -1,0 +1,31 @@
+{
+  "name": "codeswholesale/sdk",
+  "type": "library",
+  "description": "A PHP client library for CodesWholesale's API",
+  "keywords": [
+    "codeswholesale",
+    "cloud",
+    "security",
+    "api",
+    "games",
+    "cd-keys"
+  ],
+  "homepage": "https://github.com/proxene/CodesWholesale-PHP",
+  "license": "CC BY-NC 4.0",
+  "authors": [
+    {
+      "name": "Waerenburgh Dorian",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "CodesWholesale\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.0.0",
+    "sainsburys/guzzle-oauth2-plugin": "^3.0",
+    "guzzlehttp/guzzle": "^6.3"
+  }
+}
