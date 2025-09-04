@@ -1,5 +1,5 @@
 {
-  "name": "codeswholesale/sdk",
+  "name": "codeswholesalev3/sdk",
   "type": "library",
   "description": "A PHP client library for CodesWholesale's API",
   "keywords": [
