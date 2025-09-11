@@ -2,18 +2,15 @@
 
     namespace CodesWholesale\Storage;
 
-    class TokenSessionStorage implements TokenStorageInterface {
+    class SessionAuthTokenStorage implements AuthTokenStorageInterface {
 
         private $sessionKey;
 
-        public function __construct($sessionKey = 'codeswholesale_token') {
-
+        public function __construct($sessionKey = 'codeswholesale_auth_token') {
             $this->sessionKey = $sessionKey;
-
             if (session_status() === PHP_SESSION_NONE) {
                 session_start();
             }
-
         }
 
         public function saveToken(array $tokenData): void {

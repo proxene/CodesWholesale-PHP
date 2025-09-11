@@ -1,5 +1,4 @@
 <?php
-
     namespace CodesWholesale\Resource;
 
     use CodesWholesale\Client;
