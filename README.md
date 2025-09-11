@@ -54,17 +54,17 @@ use CodesWholesale\Client;
 use CodesWholesale\Storage\SessionAuthTokenStorage;
 use CodesWholesale\Storage\FileContinuationTokenStorage;
 
-$client = new Client([
-    'cw.client_id'     => 'your-client-id',
+$params = [
+    'cw.client_id' => 'your-client-id',
     'cw.client_secret' => 'your-client-secret',
-    'cw.endpoint_uri'  => CodesWholesale::SANDBOX_ENDPOINT, // or LIVE_ENDPOINT,
-    'cw.token_storage' => new SessionAuthTokenStorage(),
-]);
+    'cw.endpoint_uri' => CodesWholesale::SANDBOX_ENDPOINT, // or LIVE_ENDPOINT,
+    'cw.token_storage' => new SessionAuthTokenStorage()
+];
+
+$client = new Client($params);
 
 $continuationStorage = new FileContinuationTokenStorage(__DIR__ . '/last_token.txt');
 $continuationToken = $continuationStorage->getContinuationToken();
-
-$client = new Client($params);
 
 ```
 
