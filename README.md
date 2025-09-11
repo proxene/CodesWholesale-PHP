@@ -74,3 +74,14 @@ $products = Product::getAll($client);
 // Get a product by ID
 $product = Product::getById($client, 'PRODUCT_ID');
 ```
+
+Getter list for products : 
+
+```php
+$product->getName();
+$product->getPrices();
+$product->getDefaultPrices();
+$product->getStock();
+$product->getPlatform();
+$product->getRegions();
+```
