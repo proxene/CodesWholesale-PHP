@@ -75,13 +75,15 @@ $products = Product::getAll($client);
 $product = Product::getById($client, 'PRODUCT_ID');
 ```
 
-Getter list for products : 
-
+<details> <summary>Getter list for products</summary>
+  
 ```php
-$product->getName();
-$product->getPrices();
-$product->getDefaultPrices();
-$product->getStock();
-$product->getPlatform();
-$product->getRegions();
+  $product->getName();
+  $product->getPrices();
+  $product->getDefaultPrices();
+  $product->getStock();
+  $product->getPlatform();
+  $product->getRegions();
 ```
+
+</details>
