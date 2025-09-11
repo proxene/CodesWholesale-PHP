@@ -49,16 +49,23 @@ Designed in an **object-oriented style** inspired by the V2 SDK, with support fo
 ### 1. Initialize the Client
 
 ```php
-use CodesWholesale\Client;
-use CodesWholesale\Storage\TokenSessionStorage;
 
-// Initialize the client
+use CodesWholesale\Client;
+use CodesWholesale\Storage\SessionAuthTokenStorage;
+use CodesWholesale\Storage\FileContinuationTokenStorage;
+
 $client = new Client([
     'cw.client_id'     => 'your-client-id',
     'cw.client_secret' => 'your-client-secret',
     'cw.endpoint_uri'  => CodesWholesale::SANDBOX_ENDPOINT, // or LIVE_ENDPOINT,
-    'cw.token_storage' => new TokenSessionStorage(),
+    'cw.token_storage' => new SessionAuthTokenStorage(),
 ]);
+
+$continuationStorage = new FileContinuationTokenStorage(__DIR__ . '/last_token.txt');
+$continuationToken = $continuationStorage->getContinuationToken();
+
+$client = new Client($params);
+
 ```
 
 <br/>
