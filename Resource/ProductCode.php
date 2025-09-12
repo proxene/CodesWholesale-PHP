@@ -79,7 +79,7 @@
         * @return string Full path of saved image
         * @throws Exception If the code is not an image or download fails
         */
-        public function saveImageBase64(object $client, string $saveDir = __DIR__ . '/codes', string $baseUrl = ''): bool {
+        public function saveImageBase64(object $client, string $saveDir = __DIR__ . '/codes', string $baseUrl = ''): string {
 
             if (!$this->isImage()) {
 
