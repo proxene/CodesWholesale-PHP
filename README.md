@@ -86,12 +86,25 @@ $product = Product::getById($client, 'PRODUCT_ID');
 <details> <summary>Getter list for products</summary>
   
 ```php
-  $product->getName();
-  $product->getPrices();
-  $product->getDefaultPrices();
-  $product->getStock();
-  $product->getPlatform();
-  $product->getRegions();
+    $product->getName();
+    $product->getPrices();
+    $product->getDefaultPrices();
+    $product->getStock();
+    $product->getPlatform();
+    $product->getRegions();
 ```
 
 </details>
+
+
+<br/>
+
+### 3. Create an order
+
+```php
+use CodesWholesale\Resource\Order;
+
+$createdOrder = Order::createOrder($client, [
+    'productId' => '6313677f-5219-47e4-a067-7401f55c5a3a', 'quantity' => 2]
+]);
+```
