@@ -92,6 +92,7 @@ $product = Product::getById($client, 'PRODUCT_ID');
     $product->getStock();
     $product->getPlatform();
     $product->getRegions();
+    $product->getReleaseDate();
 ```
 
 </details>
