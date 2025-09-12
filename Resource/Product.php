@@ -127,7 +127,7 @@
         *
         * @return float|null Default price
         */
-        public function getDefaultPrices(): ?float {
+        public function getDefaultPrice(): ?float {
 
             $prices = $this->getPrices();
 
@@ -174,7 +174,6 @@
             return $this->data['regions'] ?? null;
         }
 
-        
         /**
         * Get the release date
         *

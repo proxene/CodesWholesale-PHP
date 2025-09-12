@@ -3,7 +3,7 @@
     namespace CodesWholesale\Storage;
 
     class FileContinuationTokenStorage implements ContinuationTokenStorageInterface {
-        
+
         private $file;
 
         public function __construct($file = __DIR__ . '/last_token.txt') {

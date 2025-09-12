@@ -6,16 +6,14 @@
 
         private array $data;
 
-        
+
         /**
         * Constructor for ProductCode
         *
         * @param array $data Product code data
         */
         public function __construct(array $data) {
-
             $this->data = $data;
-
         }
 
 
@@ -25,9 +23,7 @@
         * @return bool True if code type is text
         */
         public function isText(): bool {
-
             return ($this->data['codeType'] ?? '') === 'CODE_TEXT';
-
         }
 
 
@@ -37,9 +33,7 @@
         * @return bool True if code type is image
         */
         public function isImage(): bool {
-
             return ($this->data['codeType'] ?? '') === 'CODE_IMAGE';
-
         }
 
 
@@ -49,9 +43,7 @@
         * @return string|null Code value or null
         */
         public function getCode(): ?string {
-
             return $this->data['code'] ?? null;
-
         }
 
 
@@ -61,9 +53,7 @@
         * @return string|null Filename or null
         */
         public function getFilename(): ?string {
-
             return $this->data['filename'] ?? null;
-
         }
 
 
@@ -73,9 +63,7 @@
         * @return array List of links
         */
         public function getLinks(): array {
-
             return $this->data['links'] ?? [];
-
         }
 
 

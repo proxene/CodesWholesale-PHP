@@ -1,6 +1,6 @@
 <?php
-    namespace CodesWholesale\Resource;
 
+    namespace CodesWholesale\Resource;
     use CodesWholesale\Client;
 
     class Order {
