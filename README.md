@@ -51,6 +51,7 @@ Designed in an **object-oriented style** inspired by the V2 SDK, with support fo
 ```php
 
 use CodesWholesale\Client;
+use CodesWholesale\CodesWholesale;
 use CodesWholesale\Storage\SessionAuthTokenStorage;
 use CodesWholesale\Storage\FileContinuationTokenStorage;
 
