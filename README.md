@@ -106,7 +106,7 @@ $product = Product::getById($client, 'PRODUCT_ID');
 use CodesWholesale\Resource\Order;
 
 $createdOrder = Order::createOrder($client, [
-    'productId' => '6313677f-5219-47e4-a067-7401f55c5a3a', 'quantity' => 2]
+    ['productId' => '6313677f-5219-47e4-a067-7401f55c5a3a', 'quantity' => 2]
 ]);
 ```
 
