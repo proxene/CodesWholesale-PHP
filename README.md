@@ -84,11 +84,11 @@ $product = Product::getById($client, 'PRODUCT_ID');
 ```
 
 <details> <summary>Getter list for products</summary>
-  
+
 ```php
     $product->getName();
     $product->getPrices();
-    $product->getDefaultPrices();
+    $product->getDefaultPrice();
     $product->getStock();
     $product->getPlatform();
     $product->getRegions();
@@ -119,6 +119,8 @@ $createdOrder = Order::createOrder($client, [
 use CodesWholesale\Resource\Account;
 
 $accountDetails = Account::getCurrent($client);
+```
+
 <details> <summary>Getter list for the current account</summary>
   
 ```php
@@ -126,5 +128,3 @@ $accountDetails = Account::getCurrent($client);
 ```
 
 </details>
-
-```
