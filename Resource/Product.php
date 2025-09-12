@@ -174,6 +174,26 @@
             return $this->data['regions'] ?? null;
         }
 
+        /**
+        * Get the release date
+        *
+        * @return string|null Release date
+        */
+        public function getReleaseDate(): ?string {
+
+            if (empty($this->data['releaseDate'])) {
+                return null;
+            }
+
+            $timestamp = strtotime($this->data['releaseDate']);
+            if ($timestamp === false) {
+                return null;
+            }
+
+            return date('d/m/Y', $timestamp);
+
+        }
+
     }
 
 ?>
