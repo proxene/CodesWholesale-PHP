@@ -174,6 +174,7 @@
             return $this->data['regions'] ?? null;
         }
 
+        
         /**
         * Get the release date
         *
