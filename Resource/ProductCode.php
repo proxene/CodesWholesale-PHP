@@ -77,13 +77,13 @@
         * @param string $baseUrl Base URL to remove from href
         *
         * @return string Full path of saved image
-        * @throws Exception If the code is not an image or download fails
+        * @throws \Exception If the code is not an image or download fails
         */
         public function saveImageBase64(object $client, string $saveDir = __DIR__ . '/codes', string $baseUrl = ''): string {
 
             if (!$this->isImage()) {
 
-                throw new Exception("Only image codes can be downloaded.");
+                throw new \Exception("Only image codes can be downloaded.");
 
             }
 
@@ -91,7 +91,7 @@
 
             if (empty($links[0]['href'])) {
 
-                throw new Exception("No link found for this image code.");
+                throw new \Exception("No link found for this image code.");
 
             }
 
@@ -102,7 +102,7 @@
 
             if (empty($data['filename']) || empty($data['code'])) {
 
-                throw new Exception("Invalid API response for image code.");
+                throw new \Exception("Invalid API response for image code.");
 
             }
 
@@ -117,7 +117,7 @@
 
             if ($decoded === false) {
 
-                throw new Exception("Failed to decode base64 image data.");
+                throw new \Exception("Failed to decode base64 image data.");
 
             }
 

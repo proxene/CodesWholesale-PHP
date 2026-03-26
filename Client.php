@@ -6,10 +6,10 @@
 
     class Client {
 
-        private $clientId;
-        private $clientSecret;
-        private $endpoint;
-        private $tokenStorage;
+        private string $clientId;
+        private string $clientSecret;
+        private string $endpoint;
+        private TokenStorageInterface $tokenStorage;
     
         public function __construct(array $params) {
 
@@ -71,6 +71,7 @@
 
         public function request(string $method, string $endpoint, array $params = []): array {
 
+            $method = strtoupper($method);
             $url = $this->endpoint . '/' . ltrim($endpoint, '/');
             $token = $this->getAccessToken();
 
@@ -87,6 +88,7 @@
 
             } elseif ($method === 'POST') {
 
+                curl_setopt($ch, CURLOPT_POST, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
                 $headers[] = 'Content-Type: application/json';
 
@@ -94,6 +96,7 @@
 
             curl_setopt_array($ch, [
                 CURLOPT_URL            => $url,
+                CURLOPT_CUSTOMREQUEST  => $method,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_TIMEOUT        => 30,
                 CURLOPT_HTTPHEADER     => $headers,
@@ -105,9 +108,24 @@
                 throw new \Exception('cURL error: ' . curl_error($ch));
             }
 
+            $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
             curl_close($ch);
 
-            return json_decode($response, true);
+            if ($httpCode < 200 || $httpCode >= 300) {
+                throw new \Exception("HTTP {$httpCode} error: {$response}");
+            }
+
+            if ($response === '') {
+                throw new \Exception("Empty response received from {$url}");
+            }
+
+            $data = json_decode($response, true);
+
+            if (json_last_error() !== JSON_ERROR_NONE || !is_array($data)) {
+                throw new \Exception('Invalid JSON response: ' . json_last_error_msg());
+            }
+
+            return $data;
 
         }
 

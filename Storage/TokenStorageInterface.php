@@ -2,7 +2,7 @@
 
     namespace CodesWholesale\Storage;
 
-    interface AuthTokenStorageInterface {
+    interface TokenStorageInterface {
 
         public function saveToken(array $tokenData): void;
 

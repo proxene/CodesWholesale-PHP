@@ -75,9 +75,19 @@ $continuationToken = $continuationStorage->getContinuationToken();
 
 ```php
 use CodesWholesale\Resource\Product;
+use CodesWholesale\Resource\ProductItem;
 
-// Get all products
-$products = Product::getAll($client);
+// Process all products page by page
+Product::getAll(
+    $client,
+    function (array $items, ?string $nextContinuationToken): void {
+        foreach ($items as $item) {
+            $product = new ProductItem($item);
+            echo $product->getName() . PHP_EOL;
+        }
+    },
+    $continuationToken
+);
 
 // Get a product by ID
 $product = Product::getById($client, 'PRODUCT_ID');

@@ -20,12 +20,10 @@
   ],
   "autoload": {
     "psr-4": {
-      "CodesWholesale\\": "src/"
+      "CodesWholesale\\": ""
     }
   },
   "require": {
-    "php": ">=7.0.0",
-    "sainsburys/guzzle-oauth2-plugin": "^3.0",
-    "guzzlehttp/guzzle": "^6.3"
+    "php": ">=7.0.0"
   }
 }
