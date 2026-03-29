@@ -44,6 +44,12 @@ Designed in an **object-oriented style** inspired by the V2 SDK, with support fo
 
 <br/>
 
+## Installation 
+
+composer require codeswholesalev3/sdk
+
+<br/>
+
 ## Usage
 
 ### 1. Initialize the Client
