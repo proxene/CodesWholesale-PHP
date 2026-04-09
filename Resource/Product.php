@@ -12,11 +12,12 @@
         * @param Client $client The CodesWholesale client
         * @param callable|null $callback Callback to process retrieved items
         * @param string|null $continuationToken Token for paginated requests
+        * @param array $filters Optional query filters (e.g. updatedSince, createdSince)
         *
         * @return void
         * @throws \Exception If maximum retries are exceeded
         */
-        public static function getAll(Client $client, callable $callback, ?string $continuationToken = null): void {
+        public static function getAll(Client $client, callable $callback, ?string $continuationToken = null, array $filters = []): void {
 
             $retry = 0;
             $maxRetry = 5;
@@ -25,7 +26,7 @@
 
                 try {
 
-                    $params = [];
+                    $params = $filters; // updatedSince, createdSince, etc.
 
                     if ($continuationToken) {
                         $params['continuationToken'] = $continuationToken;
